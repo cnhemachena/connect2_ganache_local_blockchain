@@ -6,10 +6,9 @@ CONFIGURATION
 // -- Step 1: Set up the appropriate configuration
 let Web3 = require("web3");
 const EthereumTransaction = require("ethereumjs-tx").Transaction;
-// let web3 = new Web3('https://rinkeby.infura.io/v3/764bd42aec1e4c6dbcb2b72213fda1fc');
-const privateKeySenderHex = Buffer.from('7fb7694b8c430fed570ff34b632d43d3c9e899d52191224388ee95e2c6a5d9c6', 'hex');
+const privateKeySenderHex = Buffer.from('PVT_KEY', 'hex');
 
-const testnet = `https://rinkeby.infura.io/v3/764bd42aec1e4c6dbcb2b72213fda1fc`;
+const testnet = `https://rinkeby.infura.io/v3/API_KEY`;
 const web3 = new Web3( new Web3.providers.HttpProvider(testnet) );
 
 web3.eth.defaultChain = 'rinkeby';
@@ -61,7 +60,6 @@ Sign the Transaction
 ##########################*/
 
 // -- Step 7: Sign the transaction with the Hex value of the private key of the sender
-// let privateKeySender = '7fb7694b8c430fed570ff34b632d43d3c9e899d52191224388ee95e2c6a5d9c6';
 
 
 const transaction = new EthereumTransaction(txParams, { chain: 'rinkeby', hardfork: 'petersburg' });
